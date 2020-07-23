@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MathsOperators
 {
@@ -51,11 +51,26 @@ namespace MathsOperators
                 {
                     remainderValues();
                 }
+                else
+                {
+                    throw new InvalidOperationException("No operator selected");
+                }
             }
-            catch (Exception caught)
+            catch (FormatException bob)
             {
-                expression.Text = "";
-                result.Text = caught.Message;
+                result.Text = bob.Message;
+            }
+            catch (OverflowException oEx)
+            {
+                result.Text = oEx.Message;
+            }
+            catch (InvalidOperationException ioEx)
+            {
+                result.Text = ioEx.Message;
+            }
+            catch (Exception ex)
+            {
+                result.Text = ex.Message;
             }
         }
 
@@ -63,9 +78,10 @@ namespace MathsOperators
         {
             int lhs = int.Parse(lhsOperand.Text);
             int rhs = int.Parse(rhsOperand.Text);
-            int outcome = lhs + rhs;
-            // TODO: Add rhs to lhs and store the result in outcome
-            expression.Text = $"{lhsOperand.Text} + {rhsOperand.Text}";
+            int outcome = 0;
+
+            outcome = lhs + rhs;
+            expression.Text = $"{lhs} + {rhs}";
             result.Text = outcome.ToString();
         }
 
@@ -73,9 +89,10 @@ namespace MathsOperators
         {
             int lhs = int.Parse(lhsOperand.Text);
             int rhs = int.Parse(rhsOperand.Text);
-            int outcome = lhs - rhs;
-            // TODO: Subtract rhs from lhs and store the result in outcome
-            expression.Text = $"{lhsOperand.Text} - {rhsOperand.Text}";
+            int outcome = 0;
+
+            outcome = lhs - rhs;
+            expression.Text = $"{lhs} - {rhs}";
             result.Text = outcome.ToString();
         }
 
@@ -83,9 +100,10 @@ namespace MathsOperators
         {
             int lhs = int.Parse(lhsOperand.Text);
             int rhs = int.Parse(rhsOperand.Text);
-            int outcome = lhs * rhs;
-            // TODO: Multiply lhs by rhs and store the result in outcome
-            expression.Text = $"{lhsOperand.Text} * {rhsOperand.Text}";
+            int outcome = 0;
+
+            outcome = checked(lhs * rhs);
+            expression.Text = $"{lhs} * {rhs}";
             result.Text = outcome.ToString();
         }
 
@@ -93,9 +111,10 @@ namespace MathsOperators
         {
             int lhs = int.Parse(lhsOperand.Text);
             int rhs = int.Parse(rhsOperand.Text);
-            int outcome = lhs / rhs;
-            // TODO: Divide lhs by rhs and store the result in outcome
-            expression.Text = $"{lhsOperand.Text} / {rhsOperand.Text}";
+            int outcome = 0;
+
+            outcome = lhs / rhs;
+            expression.Text = $"{lhs} / {rhs}";
             result.Text = outcome.ToString();
         }
 
@@ -103,9 +122,10 @@ namespace MathsOperators
         {
             int lhs = int.Parse(lhsOperand.Text);
             int rhs = int.Parse(rhsOperand.Text);
-            int outcome = lhs % rhs;
-            // TODO: Work out the remainder after dividing lhs by rhs and store the result in outcome
-            expression.Text = $"{lhsOperand.Text} % {rhsOperand.Text}";
+            int outcome = 0;
+
+            outcome = lhs % rhs;
+            expression.Text = $"{lhs} % {rhs}";
             result.Text = outcome.ToString();
         }
     }

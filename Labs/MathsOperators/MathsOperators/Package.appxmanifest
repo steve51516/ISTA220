@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="5ee352aa-adfa-4a89-ac84-250293306d93"
-    Publisher="CN=student"
+    Name="81d2540c-347b-4c29-8025-2764ea3d603d"
+    Publisher="CN=Student"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="5ee352aa-adfa-4a89-ac84-250293306d93" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="81d2540c-347b-4c29-8025-2764ea3d603d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MathsOperators</DisplayName>
-    <PublisherDisplayName>student</PublisherDisplayName>
+    <PublisherDisplayName>Student</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
