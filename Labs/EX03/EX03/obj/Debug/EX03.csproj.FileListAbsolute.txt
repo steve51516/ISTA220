@@ -1,0 +1,7 @@
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\bin\Debug\EX03.exe.config
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\bin\Debug\EX03.exe
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\bin\Debug\EX03.pdb
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\obj\Debug\EX03.csprojAssemblyReference.cache
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\obj\Debug\EX03.csproj.CoreCompileInputs.cache
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\obj\Debug\EX03.exe
+E:\steve\Documents\Quantico06\ISTA220\Labs\EX03\EX03\obj\Debug\EX03.pdb
