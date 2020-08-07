@@ -22,7 +22,7 @@ namespace EX05
             Console.WriteLine("This is Array B printed normally: ");
             foreach (var num in arrayB)
             {
-                Console.Write($"{num}, ");
+                Console.Write(num + " ");
             }
             Console.WriteLine("\n------------------------------");
             Console.WriteLine("This is Array B printed backwards: ");
@@ -30,7 +30,7 @@ namespace EX05
 
             for (int i = 0; i < backwardsB.Length; i++)
             {
-                Console.Write($"{backwardsB[i]}, ");
+                Console.Write(backwardsB[i] + " ");
             }
             Console.WriteLine("\n============================================");
             Console.WriteLine("This is Array A printed normally: ");
@@ -44,7 +44,7 @@ namespace EX05
 
             for (int i = 0; i < backwardsA.Length; i++)
             {
-                Console.Write($"{backwardsA[i]}, ");
+                Console.Write(backwardsA[i] + " ");
             }
             Console.WriteLine("\n============================================");
             Console.WriteLine("This is Array C printed normally: ");
@@ -58,14 +58,14 @@ namespace EX05
 
             for (int i = 0; i < backwardsC.Length; i++)
             {
-                Console.Write($"{backwardsC[i]}, ");
+                Console.Write(backwardsC[i] + " ");
             }
             Console.WriteLine("\n============================================");
 
             Console.WriteLine("ArrayA in normal order: ");
             foreach (var num in arrayA)
             {
-                Console.Write($"{num}, ");
+                Console.Write(num + " ");
             }
             Console.WriteLine("\n------------------------------");
 
@@ -75,7 +75,7 @@ namespace EX05
             Console.WriteLine("ArrayB in normal order: ");
             foreach (var num in arrayB)
             {
-                Console.Write($"{num}, ");
+                Console.Write(num + " ");
             }
             Console.WriteLine("\n------------------------------");
 
@@ -85,12 +85,20 @@ namespace EX05
             Console.WriteLine("ArrayC in normal order: ");
             foreach (var num in arrayC)
             {
-                Console.Write($"{num}, ");
+                Console.Write(num + " ");
             }
             Console.WriteLine("\n------------------------------");
 
             sums.Rotate("left", 4, arrayC);
             Console.WriteLine();
+
+            foreach (var num in arrayC)
+            {
+                Console.Write(num + " ");
+            }
+
+            sums.BubbleSort(arrayC);
+
         }
     }
     class Sums
@@ -141,7 +149,7 @@ namespace EX05
                 }
                 foreach (var num in tempCopy)
                 {
-                     Console.Write($"{num}, ");
+                     Console.Write(num + " ");
                 }
                 
             }
@@ -161,9 +169,31 @@ namespace EX05
                 }
                 foreach (var num in tempCopy)
                 {
-                    Console.Write($"{num}, ");
+                    Console.Write(num + " ");
                 }
             }
+
+        }
+        public void BubbleSort(int[] array)
+        {
+            int temp;
+
+            for (int write = 0; write < array.Length; write++)
+            {
+                for (int sort = 0; sort < array.Length - 1; sort++)
+                {
+                    if (array[sort] > array[sort + 1])
+                    {
+                        temp = array[sort + 1];
+                        array[sort + 1] = array[sort];
+                        array[sort] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("\nArray after sorting: ");
+            for (int i = 0; i < array.Length; i++)
+                Console.Write(array[i] + " ");
+            Console.WriteLine("\n");
         }
     }
 }
