@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Security.AccessControl;
 
 namespace EX05
 {
@@ -14,36 +16,81 @@ namespace EX05
             Sums sums  = new Sums();
 
             double avg = sums.GetAvg(arrayA);
-            Console.WriteLine($"This is the average of Array A: {avg}");
+            Console.WriteLine($"This is the average of Array A:\n {avg}");
             Console.WriteLine("============================================");
 
-
+            Console.WriteLine("This is Array B printed normally: ");
+            foreach (var num in arrayB)
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine("\n------------------------------");
             Console.WriteLine("This is Array B printed backwards: ");
             int[] backwardsB = sums.Reverse(arrayB);
 
             for (int i = 0; i < backwardsB.Length; i++)
             {
-                Console.WriteLine(backwardsB[i]);
+                Console.Write($"{backwardsB[i]}, ");
             }
-            Console.WriteLine("============================================");
+            Console.WriteLine("\n============================================");
+            Console.WriteLine("This is Array A printed normally: ");
+            foreach (var num in arrayA)
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine("\n------------------------------");
             Console.WriteLine("This is Array A printed backwards: ");
             int[] backwardsA = sums.Reverse(arrayA);
 
             for (int i = 0; i < backwardsA.Length; i++)
             {
-                Console.WriteLine(backwardsA[i]);
+                Console.Write($"{backwardsA[i]}, ");
             }
-            Console.WriteLine("============================================");
+            Console.WriteLine("\n============================================");
+            Console.WriteLine("This is Array C printed normally: ");
+            foreach (var num in arrayC)
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine("\n------------------------------");
             Console.WriteLine("This is Array C printed backwards: ");
             int[] backwardsC = sums.Reverse(arrayC);
 
             for (int i = 0; i < backwardsC.Length; i++)
             {
-                Console.WriteLine(backwardsC[i]);
+                Console.Write($"{backwardsC[i]}, ");
             }
-            Console.WriteLine("============================================");
+            Console.WriteLine("\n============================================");
 
+            Console.WriteLine("ArrayA in normal order: ");
+            foreach (var num in arrayA)
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine("\n------------------------------");
 
+            sums.Rotate("left", 2, arrayA);
+            Console.WriteLine();
+
+            Console.WriteLine("ArrayB in normal order: ");
+            foreach (var num in arrayB)
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine("\n------------------------------");
+
+            sums.Rotate("right", 2, arrayB);
+            Console.WriteLine();
+
+            Console.WriteLine("ArrayC in normal order: ");
+            foreach (var num in arrayC)
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine("\n------------------------------");
+
+            sums.Rotate("left", 4, arrayC);
+            Console.WriteLine();
         }
     }
     class Sums
@@ -72,6 +119,51 @@ namespace EX05
             }
 
             return backwards;
+        }
+        public void Rotate(string direction, int places, int[] array)
+        {
+            Console.WriteLine($"Moving {places} to the {direction}");
+
+
+            if (direction == "left")
+            {
+                int[] tempCopy = new int[array.Length];
+                int j = places;
+                for (int i = 0; i <= array.Length - 1; i++)
+                {
+
+                    tempCopy[i] = array[j];
+                    if (j >= array.Length - 1)
+                        j = 0;
+                    else
+                        j++;
+
+                }
+                foreach (var num in tempCopy)
+                {
+                     Console.Write($"{num}, ");
+                }
+                
+            }
+            if (direction == "right")
+            {
+                int[] tempCopy = new int[array.Length];
+                int j = (array.Length - 1) - places;
+                for (int i = array.Length - 1; i >= 0; i--)
+                {
+
+                    tempCopy[i] = array[j];
+                    if (j == 0)
+                        j = array.Length - 1;
+                    else
+                        j--;
+
+                }
+                foreach (var num in tempCopy)
+                {
+                    Console.Write($"{num}, ");
+                }
+            }
         }
     }
 }
