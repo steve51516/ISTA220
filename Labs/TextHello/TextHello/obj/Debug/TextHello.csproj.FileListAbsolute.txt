@@ -1,7 +1,0 @@
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\bin\Debug\TextHello.exe.config
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\bin\Debug\TextHello.exe
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\bin\Debug\TextHello.pdb
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\obj\Debug\TextHello.csprojAssemblyReference.cache
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\obj\Debug\TextHello.csproj.CoreCompileInputs.cache
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\obj\Debug\TextHello.exe
-E:\steve\Documents\MSSA\Quantico06\ISTA220\Labs\TextHello\TextHello\obj\Debug\TextHello.pdb
