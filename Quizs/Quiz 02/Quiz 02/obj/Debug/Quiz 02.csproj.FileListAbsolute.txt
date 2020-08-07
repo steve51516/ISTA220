@@ -1,7 +1,0 @@
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\bin\Debug\Quiz 02.exe.config
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\bin\Debug\Quiz 02.exe
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\bin\Debug\Quiz 02.pdb
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\obj\Debug\Quiz 02.csprojAssemblyReference.cache
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\obj\Debug\Quiz 02.csproj.CoreCompileInputs.cache
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\obj\Debug\Quiz 02.exe
-E:\steve\Documents\Quantico06\ISTA220\Labs\Quiz 02\Quiz 02\obj\Debug\Quiz 02.pdb
