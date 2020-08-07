@@ -1,7 +1,0 @@
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\bin\Debug\Q04.exe.config
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\bin\Debug\Q04.exe
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\bin\Debug\Q04.pdb
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\obj\Debug\Q04.csprojAssemblyReference.cache
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\obj\Debug\Q04.csproj.CoreCompileInputs.cache
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\obj\Debug\Q04.exe
-E:\steve\Documents\Quantico06\ISTA220\Labs\Q04\Q04\obj\Debug\Q04.pdb
