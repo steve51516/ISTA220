@@ -1,7 +1,0 @@
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\bin\Debug\EX04.exe.config
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\bin\Debug\EX04.exe
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\bin\Debug\EX04.pdb
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\obj\Debug\EX04.csprojAssemblyReference.cache
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\obj\Debug\EX04.csproj.CoreCompileInputs.cache
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\obj\Debug\EX04.exe
-E:\steve\Documents\Quantico06\ISTA220\Exercises\EX04\EX04\obj\Debug\EX04.pdb
