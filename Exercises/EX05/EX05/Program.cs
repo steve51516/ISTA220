@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Globalization;
-using System.Security.AccessControl;
 
 namespace EX05
 {
@@ -119,11 +117,9 @@ namespace EX05
         public int[] Reverse(int[] array)
         {
             int[] backwards = new int[array.Length];
-            int a = 0;
-            for (int i = array.Length - 1; i >= 0 ; i--)
+            for (int i = array.Length - 1, a = 0; i >= 0 ; i--, a++)
             {
                 backwards[a] = array[i];
-                a++;
             }
 
             return backwards;
@@ -136,8 +132,8 @@ namespace EX05
             if (direction == "left")
             {
                 int[] tempCopy = new int[array.Length];
-                int j = places;
-                for (int i = 0; i <= array.Length - 1; i++)
+                //int j = places;
+                for (int i = 0, j = places; i <= array.Length - 1; i++)
                 {
 
                     tempCopy[i] = array[j];
@@ -156,8 +152,8 @@ namespace EX05
             if (direction == "right")
             {
                 int[] tempCopy = new int[array.Length];
-                int j = (array.Length - 1) - places;
-                for (int i = array.Length - 1; i >= 0; i--)
+                //int j = (array.Length - 1) - places;
+                for (int i = array.Length - 1, j = (array.Length - 1) - places; i >= 0; i--)
                 {
 
                     tempCopy[i] = array[j];
