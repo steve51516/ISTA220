@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Media;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -15,16 +14,24 @@ namespace EX06___Framework
             ShowWindow(ThisConsole, MAXIMIZE);
             Thread.Sleep(200);
 
-            //AntiPersonnelWeapons smallarms = new AntiPersonnelWeapons();
-            //smallarms.Shoot(2);
-            //smallarms.Reload();
+            AntiPersonnelWeapons smallarms = new AntiPersonnelWeapons();
+            smallarms.Shoot(2);
+            smallarms.Reload();
 
-            //indirectFireWeapons howitzer = new indirectFireWeapons();
-            //howitzer.Shoot();
-            //howitzer.Reload();
+            indirectFireWeapons howitzer = new indirectFireWeapons();
+            howitzer.Shoot();
+            howitzer.Reload();
 
             directFireWeapons BMG = new directFireWeapons();
             BMG.Shoot(3);
+
+            AC130 ac130 = new AC130();
+            ac130.Drive();
+            ac130.Stop();
+
+            Submarine submarine = new Submarine();
+            submarine.Drive();
+            submarine.Stop();
         }
         [DllImport("kernel32.dll", ExactSpelling = true)]
 
@@ -126,14 +133,14 @@ namespace EX06___Framework
             {
                 Console.WriteLine("Dropping magazine in dump pouch, inserting fresh magazine...");
                 Console.WriteLine($"{Magazines} Magazines left, {totalAmmo} total ammo left.");
-                System.Threading.Thread.Sleep(2000);
+                Thread.Sleep(2000);
                 Magazines--;
                 totalAmmo -= 30;
             }
             if (magAmmo != 0)
             {
                 Console.WriteLine("Performing tactical reload.");
-                System.Threading.Thread.Sleep(1000);
+                Thread.Sleep(1000);
                 totalAmmo -= magAmmo;
                 magAmmo = 30;
                 Console.WriteLine($"Total rounds left: {totalAmmo}");
@@ -141,7 +148,7 @@ namespace EX06___Framework
             if (totalAmmo < 30)
             {
                 Console.WriteLine($"Performing reload with magazine of {totalAmmo}");
-                System.Threading.Thread.Sleep(1000);
+                Thread.Sleep(1000);
                 magAmmo = totalAmmo;
                 totalAmmo = 0;
             }
@@ -189,7 +196,7 @@ namespace EX06___Framework
                 totalAmmo--;
                 Console.WriteLine($"Reloading Howitzer now... total ammo left: {totalAmmo}");
                 System.Threading.Thread.Sleep(1000);
-            }    
+            }
 
         }
     }
@@ -221,7 +228,7 @@ namespace EX06___Framework
             Console.WriteLine(@"  /.(_)// /// |       8///|                                                           ");
             Console.WriteLine(@" (_)' `(_)//| |       8////|___________                                               ");
             Console.WriteLine(@"(_) /_\ (_)'| |        8///////////////                                               ");
-            Console.WriteLine("(_) \"/ (_)'|_|         8/////////////                                                 ");
+            Console.WriteLine("(_) \\\"/ (_)'|_|         8/////////////                                                 ");
             Console.WriteLine(@" (_)._.(_) d' Hb         8oooooooopb'                                                 ");
             Console.WriteLine(@"   `(_)'  d'  H`b                                                                     ");
             Console.WriteLine(@"         d'   `b`b                                                                    ");
@@ -236,26 +243,98 @@ namespace EX06___Framework
                 Console.WriteLine("\nShooting .50 Caliber!");
                 soundPlayer.Play(); // Sound file 3 shots browning .50 cal
                 Thread.Sleep(2000);
-                totalAmmo -=3;
+                totalAmmo -= 3;
                 if (totalAmmo == 0)
                     Console.WriteLine("Belt is empty, must reload!");
             }
+            Console.ResetColor();
+
         }
     }
-    class Vehicles
+    public class Vehicles
     {
+        //public Vehicles()
+        //{
+        //    double Fuel = 30;
+        //}
+        public virtual void StartEngine()
+        {
+            Console.WriteLine("Starting the engine!");
+        }
+        public virtual void StoppinEngine()
+        {
+            Console.WriteLine("Stopping the engine!");
+        }
+        public virtual void Drive()
+        {
+            Console.WriteLine("Default driving method.");
+        }
+        public virtual void Stop()
+        {
+            Console.WriteLine("Default stopping method.");
+        }
 
     }
-    class Personnel
+    public class AC130 : Vehicles
     {
+        public override void Drive()
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(@"       __|__                                                                          ");
+            Console.WriteLine(@"--o--o--(_)--o--o--                                                                   ");
+            Console.WriteLine("                                                                                      ");
+            Console.WriteLine("AC130 Taking off now!                                                                 ");
+            Console.WriteLine("I hope we contacted ATC first...");
+            SoundPlayer player = new SoundPlayer(@"E:\steve\Documents\Quantico06\ISTA220\Exercises\EX06\Sound\airplane-takeoff.wav");
+            player.Play();
+            Thread.Sleep(34000);
+            Console.ResetColor();
 
+        }
+        public override void Stop()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("AC130 is landing now!");
+            SoundPlayer player = new SoundPlayer(@"E:\steve\Documents\Quantico06\ISTA220\Exercises\EX06\Sound\airplane-landing.wav");
+            player.Play();
+            Thread.Sleep(14000);
+            Console.ResetColor();
+
+
+        }
+       
     }
-    class Mission
+    public class Submarine : Vehicles
     {
+        public override void Drive()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~oo~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~          ");
+            Console.WriteLine(@"                                 o o                                                ");
+            Console.WriteLine(@"                                 o ooo                                              ");
+            Console.WriteLine(@"                                   o oo                                             ");
+            Console.WriteLine(@"                                      o o      |   #)                               ");
+            Console.WriteLine(@"                                       oo     _|_|_#_                               ");
+            Console.WriteLine(@"                                         o   | 751   |                              ");
+            Console.WriteLine(@"    __                    ___________________|       |_________________             ");
+            Console.WriteLine(@"   |   -_______-----------                                              \           ");
+            Console.WriteLine(@"  >|    _____                                                   --->     )          ");
+            Console.WriteLine(@"   |__ -     ---------_________________________________________________ /           ");
+            Console.WriteLine("AC130 Taking off now!                                                               ");
+            Console.WriteLine("                                                                                    ");
+            Console.WriteLine("Silently speeding off in our sneaky SubMarine...                                    ");
+            Console.ResetColor();
+        }
+        public override void Stop()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Floating back to the surface.                                                       ");
+            Console.ResetColor();
 
-    }
-    class Supply
-    {
-
+        }
     }
 }
